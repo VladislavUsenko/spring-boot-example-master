@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+	<title>Spring Boot Aerospike</title>
+	<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<div class="container">
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+		<div th:if="${not #lists.isEmpty(products)}">
+			<h2>Request List</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Abbreviation</th>
+					<th>Сontact person</th>
+					<th>Mobile num</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.id}">Id</td>
+					<td th:text="${product.name}">name</td>
+					<td th:text="${product.abbreviation}">abbreviation</td>
+					<td th:text="${product.person}">person</td>
+					<td th:text="${product.num}">num</td>
+					<td><a th:href="${'/product/edit/' + product.id}">Edit</a></td>
+					<td><a th:href="${'/product/delete/' + product.id}">Delete</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
