@@ -1,7 +1,10 @@
-Aerospike Spring Boot Example
+Spring request 
 =============================
-Aerospike example application built using Spring Boot and Spring Data for Aerospike.
+Приложение на Spring boot и Spring data для БД aerospike
 
-This is the application built from the [Spring Boot Tutorial](http://www.aerospike.com/docs/connectors/spring/spring_data/tutorial_1.html) on the Aerospike documentation site.
+Для запуска приложения нужно указать данные БД в классе сonfiguration/RepositoryConfiguration.java 
+В строке 23 указываем адрес хоста и порт подключения (по умолчанию 3000)
+В строке 26 В место параметра "test" указываем название вашей БД
 
-The example expects an Aerospike DB to be running at localhost:3000. To configure this edit the [configuration class](https://github.com/aerospike/spring-boot-example/blob/master/src/main/java/com/aerospike/spring/boot/example/configuration/RepositoryConfiguration.java#L23).
+Класс domain/bootstarap/ProductLoader.java выполняется во время запуска в котором можно протестировать запросы к БД
+
